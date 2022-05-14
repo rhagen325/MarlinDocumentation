@@ -1,10 +1,16 @@
 /**
  * vivus - js for animating SVGs
  */
-#svg-precision, #svg-protection, #svg-globally {
+#svg-precision,
+#svg-protection,
+#svg-globally {
   visibility: hidden;
-  svg { max-height: 150px; }
+
+  svg {
+    max-height: 150px;
+  }
 }
+
 /* animation element */
 .animation-element {
   opacity: 0;
@@ -25,7 +31,10 @@
   -ms-transform: translate(-100px, 0px);
   transform: translate3d(-100px, 0px, 0px);
 }
-.animation-element.slide-left.in-view, .animation-element.slide-up.in-view, .animation-element.fade-in.in-view  {
+
+.animation-element.slide-left.in-view,
+.animation-element.slide-up.in-view,
+.animation-element.fade-in.in-view {
   opacity: 1;
   -moz-transform: translate3d(0px, 0px, 0px);
   -webkit-transform: translate3d(0px, 0px, 0px);
@@ -34,6 +43,7 @@
   transform: translate3d(0px, 0px, 0px);
   filter: blur(0);
 }
+
 /* animation element sliding up */
 .animation-element.slide-up {
   opacity: 0;
@@ -47,13 +57,15 @@
   -ms-transform: translate(0px, 60px);
   transform: translate3d(0px, 60px, 200px);
 }
+
 /* animation element fade in */
 .animation-element.fade-in {
   opacity: 0;
   -moz-transition: all 500ms linear;
   -webkit-transition: all 500ms linear;
   -o-transition: all 500ms linear;
-  transition: all 500ms linear;;
+  transition: all 500ms linear;
+  ;
 }
 
 //for debugging
@@ -71,6 +83,7 @@
   padding: 0;
   margin: 0;
 }
+
 .mfw-bg {
   position: absolute !important;
   right: 540px;
@@ -79,85 +92,109 @@
   filter: blur(5px);
   transform: scale(1.5);
 }
-#svg-marlin-sun, #svg-marlin-tri, #svg-marlin-fishf, #svg-marlin-fishol, #svg-marlin-logo {
+
+#svg-marlin-sun,
+#svg-marlin-tri,
+#svg-marlin-fishf,
+#svg-marlin-fishol,
+#svg-marlin-logo {
   position: absolute;
 }
+
 #svg-marlin-sun {
   animation: aniSun 1s ease-in;
 }
+
 #svg-marlin-tri {
   animation: aniTri 1s ease-in;
 }
+
 #svg-marlin-fishf {
   animation: aniFishf 1s ease-in;
 }
+
 #svg-marlin-fishol {
   animation: aniFishol 1s ease-in;
 }
+
 #svg-marlin-logo {
   animation: aniLogo 1s ease-in;
 }
+
 @keyframes aniSun {
   0% {
     opacity: 0;
     transform: translateY(-200px);
   }
+
   66% {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
 @keyframes aniTri {
   0% {
     opacity: 0;
     transform: scale(2);
   }
+
   33% {
     opacity: 0;
     transform: scale(2);
   }
+
   100% {
     opacity: 1;
     transform: scale(1);
   }
 }
+
 @keyframes aniFishf {
   0% {
     opacity: 0;
     transform: translate(-30px, 30px)
   }
+
   66% {
     opacity: 0;
     transform: translate(-30px, 30px)
   }
+
   100% {
     opacity: 1;
-    transform: translate(0,0);
+    transform: translate(0, 0);
   }
 }
+
 @keyframes aniFishol {
   0% {
     opacity: 0;
     transform: translate(30px, -30px)
   }
+
   66% {
     opacity: 0;
     transform: translate(30px, -30px)
   }
+
   100% {
     opacity: 1;
-    transform: translate(0,0);
+    transform: translate(0, 0);
   }
 }
+
 @keyframes aniLogo {
   0% {
     opacity: 0;
     transform: translateX(80px);
   }
+
   80% {
     opacity: 0;
     transform: translateX(80px);
   }
+
   100% {
     opacity: 1;
     transform: translateX(0);
@@ -170,13 +207,16 @@
 .custom-btn {
   display: block;
   position: fixed;
-  right: -.75em; top: 4em;
+  right: -.75em;
+  top: 4em;
   z-index: 100;
   height: 160px;
 }
+
 .btn.e-btn {
   color: white;
-  padding-left: 10px; padding-right: 20px;
+  padding-left: 10px;
+  padding-right: 20px;
   margin-bottom: 10px;
   position: relative;
   float: right;
@@ -186,6 +226,7 @@
   -o-transition: max-width 0.3s ease-in-out;
   transition: max-width 0.3s linear;
 }
+
 .e-btn:before {
   position: absolute;
   content: '';
@@ -197,30 +238,65 @@
   z-index: -1;
   opacity: 0;
   filter: blur(5px);
-  background: linear-gradient(45deg, #29556b, #888, #88B,#88B, #888, #29556b);
+  background: linear-gradient(45deg, #29556b, #888, #88B, #88B, #888, #29556b);
   background-size: 400%;
   transition: opacity .3s ease-in-out;
   animation: animate 20s linear infinite;
 }
+
 .e-btn-text {
   display: block;
   white-space: nowrap;
   color: white;
 }
-.e-btn:hover { max-width: 280px; }
-.e-btn:hover:before { opacity: 1; }
 
-@keyframes animate {
-  0% { background-position: 0 0; } 50% { background-position: 400% 0; } 100% { background-position: 0 0; }
+.e-btn:hover {
+  max-width: 280px;
 }
 
-.btn:hover { color: white; }
-.btn-follow, .btn-edit, .btn-download, .btn-contribute, .btn-learn, .panel-learn, .panel-discord, .panel-github {
+.e-btn:hover:before {
+  opacity: 1;
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.btn:hover {
+  color: white;
+}
+
+.btn-follow,
+.btn-edit,
+.btn-download,
+.btn-contribute,
+.btn-learn,
+.panel-learn,
+.panel-discord,
+.panel-github {
   color: white;
   display: block;
   white-space: nowrap;
 }
-.btn-follow:hover, .btn-edit:hover, .btn-download:hover, .btn-contribute:hover, .btn-learn:hover {
+
+.btn-follow:hover,
+.btn-edit:hover,
+.btn-download:hover,
+.btn-contribute:hover,
+.btn-learn:hover {
   text-shadow: 1px 1px rgb(70, 70, 70);
 }
-.btn-follow.e-btn { background: rgb(0, 172, 237); }
+
+.btn-follow.e-btn {
+  background: rgb(0, 172, 237);
+}

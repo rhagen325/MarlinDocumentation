@@ -9,3 +9,4 @@ vendor
 applet/
 *.DS_Store
 _configuration/1.1/workspace.code-workspace
+_sass/_anim.scss
